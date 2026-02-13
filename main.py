@@ -6,9 +6,9 @@ from os import listdir
 from os.path import isfile, join
 pygame.init()
 
-pygame.display.set_caption("Platformer")
+pygame.display.set_caption("Yeet Platformer")
 
-WIDTH, HEIGHT = 1000, 800
+WIDTH, HEIGHT = 1000, 600
 FPS = 60
 PLAYER_VEL = 5 # Moves 5 pixels per frame
 
@@ -48,7 +48,7 @@ def get_block(size):
     path = join("assets", "Terrain", "Terrain.png")
     image = pygame.image.load(path).convert_alpha()
     surface = pygame.Surface((size, size), pygame.SRCALPHA, 32)
-    rect = pygame.Rect(96, 0, size, size) # To choose the terrain type
+    rect = pygame.Rect(96, 64, size, size) # To choose the terrain type - 12 squares = 96
     surface.blit(image, (0, 0), rect)
     return pygame.transform.scale2x(surface)
 
@@ -304,7 +304,7 @@ def main(window):
                 break
 
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE and player.jump_count < 2:
+                if event.key == pygame.K_UP and player.jump_count < 2:
                     player.jump()
 
         player.loop(FPS)
