@@ -299,6 +299,7 @@ def main(window):
                Block(block_size * 9, HEIGHT - block_size * 2, block_size), 
                Block(block_size * 10, HEIGHT - block_size * 4, block_size),
                Block(block_size * 10, HEIGHT - block_size * 2, block_size),
+               Block(block_size * 14, HEIGHT - block_size * 2, block_size),
 
                fire2]
 
